@@ -1,0 +1,26 @@
+.field-list-login{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.invalid-error {
+    position: absolute;
+    font-size: 0.8rem;
+    font-style: italic;
+    line-height: 4.4rem;
+    margin-top: 0.6rem;
+    color: red;
+}
+
+.is-invalid {
+    position: absolute;
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.4rem;
+    margin-top: 0.6rem;
+    // color: red;
+}
+
+.form-group{
+    height: 70px;
+}

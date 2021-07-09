@@ -1,0 +1,112 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  .delete-icon{
+    width: 20px;
+    margin-left: 10px;
+}
+  
+
+  :host ::ng-deep .p-button {
+    margin: 0 .5rem 0 0;
+    min-width: 10rem;
+}
+
+p {
+    margin: 0;
+}
+
+.confirmation-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+:host ::ng-deep .p-dialog .p-button {
+    min-width: 6rem;
+}
+.dialog-box{
+  width: '22vw' ;
+  height : '17vh';
+
+}
+
+.field-list-login{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.invalid-error {
+  position: absolute;
+  font-size: 0.8rem;
+  font-style: italic;
+  line-height: 4.4rem;
+  margin-top: 0.6rem;
+  color: red;
+}
+
+.is-invalid {
+  position: absolute;
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.4rem;
+  margin-top: 0.6rem;
+  // color: red;
+}
+
+.form-group{
+  height: 70px;
+}
+
+.top-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-style{
+  height: 30px;
+  min-width: 140px;
+  background: blue;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  font-family: Roboto;
+  margin-right: 20px;
+}
+
+.invalid-error {
+  position: absolute;
+  font-size: 0.8rem;
+  font-style: italic;
+  line-height: 4.4rem;
+  margin-top: 0.6rem;
+  color: red;
+}
+
+.is-invalid {
+  position: absolute;
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.4rem;
+  margin-top: 0.6rem;
+  // color: red;
+}
+
+.form-group{
+  height: 70px;
+}
+
+.top-button{
+  display: flex;
+  width: 90%;
+  justify-content: flex-end;
+}

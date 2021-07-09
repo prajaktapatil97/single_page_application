@@ -1,0 +1,58 @@
+<div>
+    <form [formGroup]="loginForm">
+        <div class="cp-form">
+            <div class="field-list-login">
+                <!-- <li class="field-item col-item custom-spacing"> -->
+                    <div class="form-group">
+                        <label for="" class="form-label">Email ID</label>
+                        <div class="input-group">
+                            <input placeholder="Email" type="text" formControlName="userName" name="username" #username pInputText class="form-control"  [ngClass]="{ 'is-invalid': loginSubmitted && f.userName.errors }" (click)="callUserLogin()">
+                        </div>
+                        <div *ngIf="loginSubmitted && f.userName.errors" class="invalid-error">
+                            <div *ngIf="f.userName.errors.required">
+                                {{errormessages.FIELD_IS_REQUIRED}}
+                            </div>
+                            <!-- <div *ngIf="f.userName.errors?.minlength">
+                                {{errormessages.USERNAME_MIN_LENGTH}}
+                            </div> -->
+                            <div *ngIf="f.userName.errors.pattern">
+                                {{errormessages.EMAIL_IS_INVALID}}
+                            </div>
+                        </div>
+                    </div>
+                <!-- </li> -->
+
+                <!-- <li class="field-item col-item"> -->
+                    <div class="form-group with-icon">
+                        <label for="" class="form-label">Password</label>
+                        <div class="input-group">
+                            <span class="icon icon-eye view-pwd" ></span>
+                            <input placeholder="Password" formControlName="password" name="password" id="password" #pw pInputText class=" form-control" [ngClass]="{ 'is-invalid': loginSubmitted && f.password.errors }" (click)="callUserLogin()">
+                        </div>
+                        <div *ngIf="loginSubmitted && f.password.errors" class="invalid-error">
+                            <div *ngIf="f.password.errors.required">
+                                {{errormessages.FIELD_IS_REQUIRED}}
+
+                            </div>
+                            <div *ngIf="f.password.errors?.minlength">
+                                {{errormessages.LOGIN_PASSWORD_MIN_LENGTH}}
+                            </div>
+                            <div *ngIf="f.password.errors?.maxlength">
+                            </div>
+
+                        </div>
+                    </div>
+              
+                <!-- </li> -->
+                <div class="btn-wrap">
+                    <!-- <button type="button" class="btn btn-outline" (click)="signUpLink()">SignUp</button> -->
+                    <button type="button" class="btn btn-default" (click)="login()" >Login</button>
+                </div>
+            </div>
+         
+        </div>
+    </form>
+
+
+
+</div>
