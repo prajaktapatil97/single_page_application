@@ -67,7 +67,6 @@ export class DashboardComponent implements OnInit {
     this.loginForm.patchValue({
       fullName: item.user_name,
       userName: item.user_email,
-      // user_id : item.user_id
     });
     this.editUserObject = {
       email_id: item.user_name,
@@ -101,9 +100,6 @@ export class DashboardComponent implements OnInit {
     this.isDelete = true;
   }
 
-  callUserLogin() {
-    this.submitted = true;
-  }
   addUser(){
    this.loginForm.reset()
    this.isUserForm = true
@@ -155,5 +151,7 @@ export class DashboardComponent implements OnInit {
 
 logout(){
   this.router.navigateByUrl('/login');
+  alert("User Logout Successfully")
+  // localStorage.clear();
 }
 }

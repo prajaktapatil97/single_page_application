@@ -11,64 +11,57 @@
     <th>Full Name</th>
     <th>Action</th>
   </tr>
-  <!-- <ng-container *ngFor = "let item of totalData ; let i=index;"> -->
   <tr *ngFor = "let item of totalData ; let i=index;">
     <td>{{i + 1}}</td>
     <td>{{item.user_email}}</td>
-    <td>{{item.user_name}}</td>
+    <td>{{item.user_name | titlecase}}</td>
     <td>
-        
         <span (click) = "editUser(item)"><img src = "../../assets/img/group.png"> </span>
         <span  (click) = "openDeletePopup(item.user_id)"> <img  class = "delete-icon" src = "../../assets/img/delete-icon.png"></span>
-     
-            
         </td>
   </tr>
-  <!-- </ng-container> -->
 </table>
 
 
   <p-dialog header="Are you Sure you want delete the user ?" [(visible)]="isDelete" [modal]="true" [style]="{width: '22vw' , height : '17vh' ,border: '1px solid gainsboro',background: 'lightgray'}" [baseZIndex]="10000"
     [draggable]="false" [resizable]="false">
     <p class="p-m-0"></p>
-        <ng-template pTemplate="footer">
+    
+        <ng-template  pTemplate="footer">
+            <div class = "footer-button">
             <p-button icon="pi pi-check" (click) = "deleteUser()" label="Yes" class="p-button-text"></p-button>
             <p-button icon="pi pi-times"  (click) = "cancelDelete()" label="No"></p-button>
+        </div>
         </ng-template>
+
 </p-dialog>
 
 
  <p-dialog header="User Details" [(visible)]="isUserForm" [modal]="true" [style]="{width: '30vw' , height : '30vh' ,border: '1px solid gainsboro',background: 'lightgray'}" [baseZIndex]="10000"
 [draggable]="false" [resizable]="false">
 <p class="p-m-0"></p>
+<div class = "form-container"> 
 <form [formGroup]="loginForm">
   <div class="cp-form">
       <div class="field-list-login">
-          <!-- <li class="field-item col-item custom-spacing"> -->
               <div class="form-group">
                   <label for="" class="form-label">Email ID</label>
                   <div class="input-group">
-                      <input placeholder="Email" type="text" formControlName="userName" name="username" #username pInputText class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" (click)="callUserLogin()">
+                      <input placeholder="Email" type="text" formControlName="userName" name="username" #username pInputText class="form-control"  [ngClass]="(submitted || f.userName.dirty)  && f.userName.errors ? 'is-invalid': ''" >
                   </div>
-                  <div *ngIf="submitted && f.userName.errors" class="invalid-error">
+                  <div *ngIf="(submitted || f.userName.dirty) && f.userName.errors" class="invalid-error">
                       <div *ngIf="f.userName.errors.required">
                           {{errormessages.FIELD_IS_REQUIRED}}
                       </div>
-                      <!-- <div *ngIf="f.userName.errors?.minlength">
-                          {{errormessages.USERNAME_MIN_LENGTH}}
-                      </div> -->
                       <div *ngIf="f.userName.errors.pattern">
                           {{errormessages.EMAIL_IS_INVALID}}
                       </div>
                   </div>
               </div>
-          <!-- </li> -->
-
-          <!-- <li class="field-item col-item"> -->
               <div class="form-group with-icon">
                   <label for="" class="form-label">Full Name</label>
                   <div class="input-group">
-                    <input type="text" formControlName="fullName" placeholder="Full Name" pInputText class="form-control" [ngClass]="{ 'is-invalid': (submitted || f.fullName.dirty) && f.fullName.errors }">
+                    <input type="text" formControlName="fullName" placeholder="Full Name" pInputText class="form-control" [ngClass]="(submitted || f.fullName.dirty)  && f.fullName.errors ? 'is-invalid': ''">
                     <div *ngIf="(f.fullName.dirty || submitted) && f.fullName.errors" class="invalid-error">
                         <div *ngIf="f.fullName.errors.required">
                             {{errormessages.FIELD_IS_REQUIRED}}
@@ -85,16 +78,12 @@
                     </div>
                 </div>
               </div>
-        
-          <!-- </li> -->
-      
+              <div class="btn-wrap">
+                <button type="button" class="btn btn-default" (click)="onSubmit()" >Submit</button>
+            </div>
       </div>
    
   </div>
 </form>
-
-    <ng-template pTemplate="footer">
-        <p-button (click) = "onSubmit()" label="Submit" class="p-button-text"></p-button>
-       
-    </ng-template>
+</div>
 </p-dialog> 

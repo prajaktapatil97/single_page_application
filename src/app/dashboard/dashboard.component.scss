@@ -95,7 +95,6 @@ p {
 .is-invalid {
   position: absolute;
   font-size: 1.2rem;
-  font-style: italic;
   line-height: 1.4rem;
   margin-top: 0.6rem;
   // color: red;
@@ -109,4 +108,36 @@ p {
   display: flex;
   width: 90%;
   justify-content: flex-end;
+}
+
+.footer-button{
+  margin-top: 4rem;
+  margin-left: 3rem;
+}
+.cp-form{
+  // display: flex;
+  // justify-content: center;
+  // width: 9rem;
+  // position: fixed;
+  margin-left: 2rem;
+
+}
+
+.form-control{
+  width: 14rem;
+  height: 1.5rem;
+  font-family: Roboto;
+  cursor: pointer;
+}
+
+.btn{
+  height: 1.5rem;
+  width: 7rem;
+  height: 2rem;
+  width: 7rem;
+  font-size: 16px;
+}
+
+.form-container{
+  margin-top: 2rem;
 }

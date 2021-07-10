@@ -17,7 +17,6 @@
     font-size: 1.2rem;
     line-height: 1.4rem;
     margin-top: 0.6rem;
-    // color: red;
 }
 
 .form-group{
@@ -29,7 +28,7 @@
     left: 35rem;
     top: 2 rem;
     top: 4rem;
-    border: 1px solid;
+    border: 1px solid #80808040;
     width: 40 rem;
     width: 20rem;
     height: 20rem;
@@ -40,21 +39,14 @@
 .user-title{
     height: 3rem;
     display: flex;
-    /* top: 6rem; */
     justify-content: center;
-    /* top: 3rem; */
     margin-top: 1rem;
     font-family: Roboto;
     font-weight: bold;
     font-size: 20px;
 }
 .cp-form{
-    // display: flex;
-    // justify-content: center;
-    // width: 9rem;
-    // position: fixed;
     margin-left: 2rem;
-
 }
 
 .form-control{

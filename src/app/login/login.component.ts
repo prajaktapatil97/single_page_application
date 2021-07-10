@@ -46,25 +46,17 @@ export class LoginComponent implements OnInit {
     );
   }
 
-
-callUserLogin() {
-  console.log("this.loginForm.controls",this.loginForm.controls)
-  this.loginSubmitted = true;
-  if (!this.loginForm.controls['password'].invalid && !this.loginForm.controls['userName'].invalid) {
-    // this.login(this.loginForm.controls['userName'].value, this.loginForm.controls['password'].value)
-  }
-}
 login(){
-  if(this.loginForm.controls.userName.value == 'admin@gmail.com' && this.loginForm.controls.password.value == 'password'){
+  if((this.loginForm.controls.userName.value).toLowerCase() == 'admin@gmail.com' && (this.loginForm.controls.password.value).toLowerCase() == 'password'){
     this.router.navigateByUrl('/dashboard');
+    // localStorage.setItem('login',this.loginForm.controls.userName.value) 
   }
   else{
+    alert("Please enter Valid Credentials")
     this.invalidCreadentials = true;
   }
  }
 // convenience getter for easy access to form fields
 get f() {
   return this.loginForm.controls; }
-
-
 }
