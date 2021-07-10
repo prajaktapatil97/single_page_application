@@ -28,6 +28,7 @@ export class DashboardComponent implements OnInit {
   isEditForm: boolean = false;
   editUserObject: { email_id: any; user_name: any; user_id: any; } | undefined;
   userAction: string | undefined;
+  editUserId: any;
 ;
 
   constructor(
@@ -69,11 +70,8 @@ export class DashboardComponent implements OnInit {
       fullName: item.user_name,
       userName: item.user_email,
     });
-    this.editUserObject = {
-      email_id: item.user_name,
-      user_name: item.user_email,
-      user_id : item.user_id
-    }
+    this.editUserId = item.user_id
+  
   this.isEditForm = true;
   this.userAction = 'Update'
   }
@@ -126,6 +124,11 @@ export class DashboardComponent implements OnInit {
       });
      }
      else{
+      this.editUserObject = {
+        email_id :this.loginForm.controls.userName.value,
+        user_name : this.loginForm.controls.fullName.value,
+        user_id : this.editUserId
+      }
       this.userService.editUser(this.editUserObject).subscribe(response => {
         if (response) {
           if (response.status == 0) {
