@@ -27,6 +27,7 @@ export class DashboardComponent implements OnInit {
   userId: any;
   isEditForm: boolean = false;
   editUserObject: { email_id: any; user_name: any; user_id: any; } | undefined;
+  userAction: string | undefined;
 ;
 
   constructor(
@@ -74,7 +75,7 @@ export class DashboardComponent implements OnInit {
       user_id : item.user_id
     }
   this.isEditForm = true;
-  
+  this.userAction = 'Update'
   }
   openDeletePopup(user_id :any){
     this.userId = user_id
@@ -104,6 +105,7 @@ export class DashboardComponent implements OnInit {
    this.loginForm.reset()
    this.isUserForm = true
    this.isEditForm = false;
+   this.userAction = 'Add'
    }
 
    onSubmit(){
